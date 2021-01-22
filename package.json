@@ -1,5 +1,5 @@
 {
-  "name": "react-horizontal-scroll",
+  "name": "react-auto-horizontal-scroll",
   "version": "1.0.0",
   "description": "Customizable component which lets you have your own content scroll accross a div automatically.",
   "author": "elijah-burke",
