@@ -1,4 +1,4 @@
-# react-horizontal-scroll
+# react-auto-horizontal-scroll
 
 > Customizable component which lets you have your own content scroll accross a div automatically.
 
