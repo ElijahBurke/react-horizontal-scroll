@@ -2,7 +2,7 @@
   "name": "react-horizontal-scroll",
   "version": "1.0.0",
   "description": "Customizable component which lets you have your own content scroll accross a div automatically.",
-  "author": "ElijahBurke",
+  "author": "elijah-burke",
   "license": "MIT",
   "repository": "ElijahBurke/react-horizontal-scroll",
   "main": "dist/index.js",

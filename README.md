@@ -31,12 +31,10 @@ const imgs = [
   Mongoose,
 ];
 
-const ShowImg = ({ img }) => <img src={img} alt="" />
-
 const MapImg = ({ list }) => list.map(item => (
-<div className="img-container" key={item}>
-  <ShowImg img={item} />
-</div>
+  <div className="img-container" key={item}>
+    <Img src={item} alt="" />
+  </div>
 ))
 
 const ScrollableDiv = ReactScrolling(MapImg);
