@@ -1,9 +1,29 @@
 /* add css module styles here (optional) */
 
-.test {
+/* .test {
   margin: 2em;
   padding: 0.5em;
   border: 2px solid #000;
   font-size: 2em;
   text-align: center;
+} */
+
+.scrolling {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.scroll {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* transition: 10s linear; */
+}
+
+.component {
+  display: flex;
+  flex-wrap: nowrap;
 }

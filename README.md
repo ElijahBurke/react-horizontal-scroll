@@ -7,21 +7,48 @@
 ## Install
 
 ```bash
-npm install --save react-horizontal-scroll
+npm i react-horizontal-scroll
 ```
 
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
-
-import MyComponent from 'react-horizontal-scroll'
+import { ReactScrolling } from 'react-horizontal-scroll';
 import 'react-horizontal-scroll/dist/index.css'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const imgs = [
+  React,
+  Redux,
+  GraphQL,
+  Ramda,
+  TypeScript,
+  NodeJS,
+  Express,
+  Jest,
+  PostgreSQL,
+  Sequelize,
+  MongoDB,
+  Mongoose,
+];
+
+const ShowImg = ({ img }) => <img src={img} alt="" />
+
+const MapImg = ({ list }) => list.map(item => (
+<div className="img-container" key={item}>
+  <ShowImg img={item} />
+</div>
+))
+
+const ScrollableDiv = ReactScrolling(MapImg);
+
+const App = () => {
+  return (
+  <div className="whole-page">
+    <div className="scrolling-container">
+      <ScrollableDiv list={imgs} time="10s" />
+    </div>
+  </div>
+  )
 }
 ```
 
