@@ -1,0 +1,17 @@
+.styles-container {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.styles-inner-container {
+  position: relative;
+  /* display: flex;
+  flex-wrap: nowrap; */
+}
+
+.ScrollEl-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
