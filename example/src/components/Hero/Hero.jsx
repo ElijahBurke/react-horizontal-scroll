@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useLayoutEffect, useRef } from 'react'
 import './Hero.css';
 import Nav from '../Nav/Nav';
+import { useHistory } from 'react-router-dom';
 
 // import { ReactScrolling } from 'react-horizontal-scroll'
 // import 'react-horizontal-scroll/dist/index.css'
@@ -25,6 +26,7 @@ const imgs = [
 
 
 const Hero = () => {
+  const history = useHistory();
   return (
   <section className="home__hero">
     <div className="hero__title">
@@ -34,13 +36,13 @@ const Hero = () => {
       Customisable Carousel That Automatically Displays Your Content In An Automatically Scrolling React Component
     </div>
     <div className="scrolling-container">
-      <ReactScrolling mapper={mapper} list={imgs} time="20s" width="150px" />
+      <ReactScrolling mapper={mapper} list={imgs} time="60s" width="150px" />
     </div>
     <div className="hero__buttons">
       <button type="submit">
         GitHub
       </button>
-      <button type="submit">
+      <button type="submit" onClick={() => history.push('/docs')}>
         Docs 
       </button>
     </div>

@@ -2,16 +2,20 @@
   height: 100%;
   overflow: hidden;
   width: 100%;
+  position: relative;
 }
 
 .styles-inner-container {
   position: relative;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-wrap: nowrap;
   /* display: flex;
   flex-wrap: nowrap; */
 }
 
 .ScrollEl-container {
-  position: absolute;
-  left: 0;
-  top: 0;
+  
 }

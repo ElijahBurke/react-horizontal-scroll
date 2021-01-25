@@ -1,7 +1,9 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom';
 import './Nav.css';
 
 const Nav = () => {
+  const history = useHistory();
   return (
     <nav className="Nav__nav">
       <a href="">
@@ -10,7 +12,7 @@ const Nav = () => {
       <a href="">
         NPM
       </a>
-      <a href="">
+      <a onClick={() => history.push('/docs')}>
         DOCS
       </a>
     </nav>

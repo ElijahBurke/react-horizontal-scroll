@@ -63,54 +63,27 @@ import './component.css';
 //   )
 // }
 
-const ScrollEl = ({ item, width, mapper, left, time, numCanFit, maxleft }) => {
-  const ref = useRef();
-  const doAnim = (ref) => {
-    console.log(ref);
-    ref.style.transition = `${time.replace('s', '') / numCanFit}s linear`;
-    ref.style.left = `${ref.style.left.replace('px', '') - width.replace('px', '')}px`;
-    if (ref.style.left === `-${width}`) ref.addEventListener('transitionend', resetOnTransition)
-    else ref.addEventListener('transitionend', transition)
-  }
-  function transition (e) {
-    if (e.target === ref.current) {
-      setTimeout(() => doAnim(this), 1);
-      this.removeEventListener('transitionend', transition)
-    }
-  }
-  function resetOnTransition (e) {
-    if (e.target === ref.current) {
-      this.style.transition = 'none';
-      this.style.left = maxleft;
-      setTimeout(() => doAnim(this), 1);
-      this.removeEventListener('transitionend', resetOnTransition)
-    }
-  }
-  useLayoutEffect(() => {
-    if (ref.current) {
-      setTimeout(() => doAnim(ref.current), 1)
-    }
-    return () => {
-      ref.current.removeEventListener('transitionend', transition);
-      ref.current.removeEventListener('transitionend', resetOnTransition);
-    }
-  }, [ref])
+const ScrollEl = ({ item, width, mapper, margin, i }) => {
   return (
-    <div className="ScrollEl-container" id={`screlc${left} `} style={{ width, left }} ref={ref}>
+    <div className="ScrollEl-container" id={`screlc${i}`} style={{ width, margin }}>
       {mapper(item)}
     </div>
   )
 }
 
-export const ReactScrolling = ({ mapper, list, time, width, maxContainerWidth = 2000 }) => {
+export const ReactScrolling = ({ mapper, list, time, width, maxContainerWidth = 2000, margin = '0px' }) => {
   const containerRef = useRef();
   const innerRef = useRef();
   const [containerWidth, setContainerWidth] = useState(null);
   const [numCanFit] = useState(Math.ceil(maxContainerWidth / width.replace('px', '')));
+  const [canFitInContainer, setCanFitInContainer] = useState(null);
   const [displayList, setDisplayList] = useState(null);
+  const [children, setChildren] = useState(null);
+  const [totalWidth] = useState(`${+width.replace('px', '') + (margin.replace('px', '') * 2)}px`)
 
   function setContainerWidthToRef () {
     setContainerWidth(containerRef.current.offsetWidth)
+    setCanFitInContainer(Math.ceil(containerRef.current.offsetWidth / totalWidth))
   }
 
   useEffect(() => {
@@ -125,6 +98,34 @@ export const ReactScrolling = ({ mapper, list, time, width, maxContainerWidth = 
     }
   }, [containerWidth, containerRef])
 
+  useLayoutEffect(() => {
+    if (innerRef.current) {
+      setChildren(innerRef.current.children);
+    }
+  }, [innerRef])
+
+  function doParentAnim () {
+    innerRef.current.style.transition = `${time.replace('s', '') / numCanFit}s linear`;
+    innerRef.current.style.left = `-${totalWidth}`;
+    innerRef.current.addEventListener('transitionend', resetTransition);
+  };
+
+  function resetTransition (e) {
+    if (e.target === innerRef.current) {
+      innerRef.current.style.transition = 'none';
+      innerRef.current.style.left = 0;
+      this.removeEventListener('transitionend', resetTransition);
+      children[children.length - 1].after(children[0]);
+      setTimeout(doParentAnim, 1);
+    }
+  }
+
+  useEffect(() => {
+    if (children && numCanFit && innerRef.current) {
+      doParentAnim();
+    }
+  }, [children, numCanFit, innerRef])
+
   useEffect(() => {
     if (containerRef.current) window.addEventListener('resize', setContainerWidthToRef)
     return () => { window.removeEventListener('resize', setContainerWidthToRef); }
@@ -138,10 +139,9 @@ export const ReactScrolling = ({ mapper, list, time, width, maxContainerWidth = 
           item={item}
           width={width}
           mapper={mapper}
-          left={`${width.replace('px', '') * i}px`}
           time={time}
-          numCanFit={numCanFit}
-          maxleft={(displayList.length - 1) * width.replace('px', '') + 'px'}
+          margin={margin}
+          i={i}
         />)}
       </div>
     </div>

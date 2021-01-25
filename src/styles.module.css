@@ -1,29 +1,19 @@
-/* add css module styles here (optional) */
-
-/* .test {
-  margin: 2em;
-  padding: 0.5em;
-  border: 2px solid #000;
-  font-size: 2em;
-  text-align: center;
-} */
-
-.scrolling {
+.container {
   height: 100%;
-  position: relative;
   overflow: hidden;
   width: 100%;
+  position: relative;
 }
 
-.scroll {
-  display: flex;
+.innercontainer {
+  position: relative;
   position: absolute;
-  top: 0;
   left: 0;
-  /* transition: 10s linear; */
-}
-
-.component {
+  top: 0;
   display: flex;
   flex-wrap: nowrap;
+}
+
+.ScrollEl-container {
+  
 }
