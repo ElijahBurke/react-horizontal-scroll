@@ -15,7 +15,8 @@ export const ReactScrolling = ({ mapper, list, time = "30s", width = "100px", ma
   const containerRef = useRef();
   const innerRef = useRef();
   const [containerWidth, setContainerWidth] = useState(null);
-  const [numCanFit] = useState(Math.ceil(maxContainerWidth.replace('px', '') / width.replace('px', '')));
+  // Math.ceil(maxContainerWidth.replace('px', '') / width.replace('px', ''))
+  const [numCanFit, setNumCanFit] = useState(null);
   const [canFitInContainer, setCanFitInContainer] = useState(null);
   const [displayList, setDisplayList] = useState(null);
   const [children, setChildren] = useState(null);
@@ -26,12 +27,12 @@ export const ReactScrolling = ({ mapper, list, time = "30s", width = "100px", ma
   }
 
   useEffect(() => {
-    if (numCanFit && list.length < numCanFit) {
-      setDisplayList(Array(Math.ceil(numCanFit / list.length)).fill(list).flat())
-    } else if (numCanFit) {
+    if (canFitInContainer && list.length < canFitInContainer) {
+      setDisplayList(Array(Math.ceil(canFitInContainer / list.length)).fill(list).flat())
+    } else if (canFitInContainer) {
       setDisplayList(list);
     }
-  }, [numCanFit])
+  }, [canFitInContainer])
 
   useLayoutEffect(() => {
     if (!containerWidth && containerRef.current) {
@@ -46,7 +47,7 @@ export const ReactScrolling = ({ mapper, list, time = "30s", width = "100px", ma
   }, [innerRef])
 
   function doParentAnim () {
-    innerRef.current.style.transition = `${time.replace('s', '') / numCanFit}s linear`;
+    innerRef.current.style.transition = `${time.replace('s', '') / canFitInContainer}s linear`;
     innerRef.current.style.left = `-${width}`;
     innerRef.current.addEventListener('transitionend', resetTransition);
   };
@@ -68,7 +69,7 @@ export const ReactScrolling = ({ mapper, list, time = "30s", width = "100px", ma
       doParentAnim(width);
     }
     return () => { innerRef.current && innerRef.current.removeEventListener('transitionend', resetTransition)};
-  }, [children, numCanFit, innerRef, width])
+  }, [children, numCanFit, innerRef, width, canFitInContainer])
 
   useEffect(() => {
     if (containerRef.current) window.addEventListener('resize', setContainerWidthToRef)
