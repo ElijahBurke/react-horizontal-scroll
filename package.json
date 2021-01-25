@@ -1,7 +1,7 @@
 {
-  "name": "react-auto-horizontal-scroll",
+  "name": "react-auto-glide",
   "version": "1.0.0",
-  "description": "Customizable component which lets you have your own content scroll accross a div automatically.",
+  "description": "Customizable component which lets you have your own content glide smoothly accross the screen.",
   "author": "elijah-burke",
   "license": "MIT",
   "repository": "ElijahBurke/react-horizontal-scroll",

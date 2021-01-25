@@ -1,17 +1,18 @@
 import React, { useEffect, useLayoutEffect, useRef, useState }  from 'react'
 import styles from './styles.module.css'
 
-const ScrollEl = ({ item, width, mapper, margin, i }) => {
+const ScrollEl = ({ item, width, mapper, i }) => {
   return (
-    <div className="ScrollEl-container" id={`screlc${i}`} style={{ width, margin }}>
+    <div className={styles.scrollel} id={`screlc${i}`} style={{ width }}>
       {mapper(item)}
     </div>
   )
 }
 
-// DO WE NEED TO CHANGE IT SO ITS THE DEFAULT BOX-SIZING?
+// add box-sizing border box && add padding option
 
-export const ReactScrolling = ({ mapper, list, time = "30s", width = "100px", maxContainerWidth = "2000px", margin = '0px' }) => {
+export const ReactScrolling = ({ mapper, list, time = "30s", width = "100px", maxContainerWidth = "2000px"}) => {
+  console.log(width);
   const containerRef = useRef();
   const innerRef = useRef();
   const [containerWidth, setContainerWidth] = useState(null);
@@ -19,12 +20,13 @@ export const ReactScrolling = ({ mapper, list, time = "30s", width = "100px", ma
   const [canFitInContainer, setCanFitInContainer] = useState(null);
   const [displayList, setDisplayList] = useState(null);
   const [children, setChildren] = useState(null);
-  const [totalWidth] = useState(`${+width.replace('px', '') + (margin.replace('px', '') * 2)}px`)
 
   function setContainerWidthToRef () {
     setContainerWidth(containerRef.current.offsetWidth)
-    setCanFitInContainer(Math.ceil(containerRef.current.offsetWidth / totalWidth))
+    setCanFitInContainer(Math.ceil(containerRef.current.offsetWidth / width.replace('px', '')))
   }
+
+  useEffect(() => { console.log(displayList)}, [displayList])
 
   useEffect(() => {
     if (numCanFit && list.length < numCanFit) {
@@ -46,7 +48,7 @@ export const ReactScrolling = ({ mapper, list, time = "30s", width = "100px", ma
 
   function doParentAnim () {
     innerRef.current.style.transition = `${time.replace('s', '') / numCanFit}s linear`;
-    innerRef.current.style.left = `-${totalWidth}`;
+    innerRef.current.style.left = `-${width}`;
     innerRef.current.addEventListener('transitionend', resetTransition);
   };
 
@@ -80,7 +82,6 @@ export const ReactScrolling = ({ mapper, list, time = "30s", width = "100px", ma
           width={width}
           mapper={mapper}
           time={time}
-          margin={margin}
           i={i}
         />)}
       </div>

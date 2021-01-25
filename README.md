@@ -16,7 +16,7 @@ npm i react-auto-glide
 
 ```jsx
 import { ReactScrolling } from 'react-auto-glide';
-import 'react-horizontal-scroll/dist/index.css'
+import 'react-auto-glide/dist/index.css'
 
 const imgs = [
   React, Redux, GraphQL, Ramda,
@@ -38,7 +38,6 @@ const App = () => {
         time="30s"
         max-width="1000px";
         width="100px"
-        margin="10px"
       />
     </div>
   </section>
@@ -57,7 +56,6 @@ const App = () => {
 | time | The amount of time you want it to take for the elements to glide from the right of the container to the left of the container | Not Required | 30s |
 | width | String that defines the width for each element inside the div which is scrolling | Not Required | "100px" |
 | maxContainerWidth | String that defines the max width for the container - does not need to be the actual width | Not Required | "2000px" |
-| margin | String that defines margin for each element to allow spacing between elements | Not Required | "2000px" |
 
 ## License
 

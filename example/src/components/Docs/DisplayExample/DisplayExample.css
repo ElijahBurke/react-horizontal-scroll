@@ -1,0 +1,31 @@
+.DisplayExample__example {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.example__container {
+  width: 90%;
+  border-radius: 5px;
+  background: white;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container__scrolling {
+  height: 30%;
+}
+
+.img__card {
+  width: 100%;
+  height: 100%;
+  background: #ccc;
+  border: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
