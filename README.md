@@ -56,6 +56,7 @@ const App = () => {
 | time | The amount of time you want it to take for the elements to glide from the right of the container to the left of the container | Not Required | 30s |
 | width | String that defines the width for each element inside the div which is scrolling | Not Required | "100px" |
 | maxContainerWidth | String that defines the max width for the container - does not need to be the actual width | Not Required | "2000px" |
+| delayBetweenScroll | Number that defines ms between element reaching the end of the container and scroll restarting, if no number is entered defaults to no delay | Not Required | No Delay |
 
 ## License
 

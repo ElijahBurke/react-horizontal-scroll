@@ -11,7 +11,7 @@ const ScrollEl = ({ item, width, mapper, i }) => {
 
 // add box-sizing border box && add padding option
 
-export const ReactScrolling = ({ mapper, list, time = "30s", width = "100px", maxContainerWidth = "2000px"}) => {
+export const ReactScrolling = ({ mapper, list, time = "30s", width = "100px", maxContainerWidth = "2000px", delayBetweenScroll = 1}) => {
   const containerRef = useRef();
   const innerRef = useRef();
   const [containerWidth, setContainerWidth] = useState(null);
@@ -57,15 +57,18 @@ export const ReactScrolling = ({ mapper, list, time = "30s", width = "100px", ma
       innerRef.current.style.left = 0;
       this.removeEventListener('transitionend', resetTransition);
       children[children.length - 1].after(children[0]);
-      setTimeout(doParentAnim, 1);
+      setTimeout(() => doParentAnim(width), delayBetweenScroll);
     }
   }
 
   useEffect(() => {
     if (children && numCanFit && innerRef.current) {
-      doParentAnim();
+      innerRef.current.style.transition = 'none';
+      innerRef.current.style.left = 0;
+      doParentAnim(width);
     }
-  }, [children, numCanFit, innerRef])
+    return () => { innerRef.current && innerRef.current.removeEventListener('transitionend', resetTransition)};
+  }, [children, numCanFit, innerRef, width])
 
   useEffect(() => {
     if (containerRef.current) window.addEventListener('resize', setContainerWidthToRef)
