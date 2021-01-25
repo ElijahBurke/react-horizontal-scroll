@@ -12,7 +12,6 @@ const ScrollEl = ({ item, width, mapper, i }) => {
 // add box-sizing border box && add padding option
 
 export const ReactScrolling = ({ mapper, list, time = "30s", width = "100px", maxContainerWidth = "2000px"}) => {
-  console.log(width);
   const containerRef = useRef();
   const innerRef = useRef();
   const [containerWidth, setContainerWidth] = useState(null);
@@ -26,11 +25,11 @@ export const ReactScrolling = ({ mapper, list, time = "30s", width = "100px", ma
     setCanFitInContainer(Math.ceil(containerRef.current.offsetWidth / width.replace('px', '')))
   }
 
-  useEffect(() => { console.log(displayList)}, [displayList])
-
   useEffect(() => {
     if (numCanFit && list.length < numCanFit) {
       setDisplayList(Array(Math.ceil(numCanFit / list.length)).fill(list).flat())
+    } else if (numCanFit) {
+      setDisplayList(list);
     }
   }, [numCanFit])
 
