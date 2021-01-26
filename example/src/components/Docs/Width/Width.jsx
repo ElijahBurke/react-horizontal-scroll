@@ -4,7 +4,7 @@ import { ReactScrolling } from 'react-auto-glide';
 import DisplayCodeAndRender from '../DisplayCodeAndRender/DisplayCodeAndRender';
 import './Width.scss';
 
-function Width() {
+function Width () {
   const [width, setWidth] = useState('30px');
   const imgs = [
     'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png',
@@ -65,6 +65,7 @@ function App() {
           name="width"
           min="30"
           max="200"
+          value={width.replace('px', '')}
           onChange={(e) => setWidth(`${e.target.value}px`)}
         />
         <div className="glide-container">

@@ -12,7 +12,7 @@ npm i react-auto-glide
 
 ## Usage
 
-[See the docs for more in depth demos and examples!](https://react-auto-glide.netlify.app)
+[See the docs for more in depth demos and examples!](https://autoglide.netlify.app/)
 
 ```jsx
 import { ReactScrolling } from 'react-auto-glide';
