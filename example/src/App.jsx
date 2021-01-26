@@ -1,26 +1,27 @@
-import React from 'react'
-import Hero from './components/Hero/Hero';
-import Nav from './components/Nav/Nav';
-import Docs from './components/Docs/Docs';
-
+import React from 'react';
+import './App.scss';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
-} from "react-router-dom";
+  Route,
+} from 'react-router-dom';
+import Nav from './Components/Nav/Nav';
+import Hero from './Components/Hero/Hero';
+import Docs from './Components/Docs/Docs';
 
-const App = () => {
+function App () {
   return (
-  <>
-    <Router>
-      <Nav />
-      <Switch>
-        <Route exact path="/" component={Hero} />
-        <Route exact path="/docs" component={Docs} />
-      </Switch>
-    </Router>
-  </>
-  )
+    <>
+      <Router>
+        <Nav />
+        <div className="nav-buffer" />
+        <Switch>
+          <Route exact path="/" component={Hero} />
+          <Route exact path="/docs/:name" render={(routeProps) => <Docs name={routeProps.match.params.name} />} />
+        </Switch>
+      </Router>
+    </>
+  );
 }
 
-export default App
+export default App;

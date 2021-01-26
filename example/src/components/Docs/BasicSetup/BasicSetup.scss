@@ -1,0 +1,49 @@
+@import '../../../variables.scss';
+.BasicSetup__basic-setup {
+  width: 100%;
+  background: darken($background, 10%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 90vh;
+  @media only screen and (min-height: 800px) {
+    scroll-snap-align: start;
+  }
+  .basic-setup__containers {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .containers__left {
+      width: 60%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 1% 0%;
+      .left__title {
+        font-size: 3rem;
+        margin-bottom: 2%;
+        text-align: center;
+      }
+      .left__subtitle {
+        text-align: center;
+        font-size: 1.8rem;
+        width: 80%;
+      }
+    }
+    .containers__right {
+      margin: 1% 0%;
+      width: 60%;
+      code, pre {
+        height: 400px;
+      }
+    }
+  }
+  .glide-container {
+    margin: 1% 0%;
+    width: 100%;
+    height: 10vh;
+    img { width: 80%; }
+  }
+}

@@ -10,13 +10,14 @@
     "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject"
   },
   "dependencies": {
-    "prismjs": "^1.23.0",
+    "node-sass": "^4.14.1",
     "react": "file:../node_modules/react",
+    "react-auto-glide": "^1.1.7",
     "react-dom": "file:../node_modules/react-dom",
     "react-horizontal-scroll": "file:..",
-    "react-markdown": "^5.0.3",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "file:../node_modules/react-scripts"
+    "react-scripts": "file:../node_modules/react-scripts",
+    "react-syntax-highlighter": "^15.4.3"
   },
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.8.3",
