@@ -1,0 +1,43 @@
+@import '../../../variables.scss';
+.Width__width {
+  width: 100%;
+  min-height: 90vh;
+  background: $background;
+  .width__container {
+    width: 75%;
+    padding: 1% 1.5%;
+    .container__title {
+      font-size: 4rem;
+      font-family: $second-font;
+      margin-bottom: 0.5%;
+      width: 80%;
+    }
+    .container__subtitle {
+      font-size: 2.4rem;
+      font-family: $second-font;
+      margin-bottom: 1%;
+      width: 80%;
+    }
+    .container__subsubtitle {
+      font-size: 1.6rem;
+      font-family: $second-font;
+      margin-bottom: 1%;
+      width: 80%;
+    }
+    .container__code {
+      width: 60%;
+      margin-bottom: 2%;
+      pre, code {
+        height: 400px;
+      }
+    }
+    .glide-container {
+      margin: 2% 0%;
+      width: 100%;
+      height: 20vh;
+      img { 
+        width: 80%;
+      }
+    }
+  }
+}

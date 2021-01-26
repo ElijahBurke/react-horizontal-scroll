@@ -1,0 +1,51 @@
+@import '../../../variables.scss';
+.GettingStarted__install {
+  background: $background;
+  width: 100%;
+  display: flex;
+  @media only screen and (min-height: 800px) {
+    scroll-snap-align: start;
+  }
+  .install__inner {
+    padding: 1% 2% 0% 2%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+  }
+  .install__title {
+    font-size: 4rem;
+    font-family: $second-font;
+    margin-bottom: 0.5%;
+    width: 40%;
+    min-width: 600px;
+  }
+  .install__subsubtitle {
+    font-size: 1.6rem;
+    margin-bottom: 0.4%;
+    width: 40%;
+    min-width: 600px;
+  }
+  .install__import,
+  .install__pre-reqs {
+    font-size: 1.6rem;
+    margin-bottom: 0.4%;
+    width: 40%;
+    min-width: 600px;
+  }
+  .code__area {
+    width: 40%;
+    min-width: 600px;
+    margin-bottom: 1.5%;
+    code, span {
+      font-size: 1.6rem;
+    }
+  }
+  .glide-container {
+    width: 100%;
+    height: 12vh;
+    margin-top: 2%;
+    img {
+      width: 80%;
+    }
+  }
+}

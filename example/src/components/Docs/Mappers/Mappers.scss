@@ -1,0 +1,73 @@
+@import '../../../variables.scss';
+.Mappers__mappers {
+  width: 100%;
+  min-height: 90vh;
+  background: $background;
+  .mappers__container {
+    width: 75%;
+    padding: 1% 1.5%;
+    .container__title {
+      font-size: 4rem;
+      font-family: $second-font;
+      margin-bottom: 0.5%;
+      width: 80%;
+    }
+    .container__subtitle {
+      font-size: 2.4rem;
+      font-family: $second-font;
+      margin-bottom: 1%;
+      width: 80%;
+    }
+    .container__component-code {
+      width: 60%;
+      margin-bottom: 2%;
+      pre, code {
+        height: 400px;
+      }
+    }
+  }
+  .glide-container {
+    height: 20vh;
+    width: 100%;
+    margin: 2% 0%;
+  }
+  .card{
+    position: relative;
+    margin: 2%;
+    width: 90%;
+    height: 90%;
+  }
+  .front,.back{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .6s linear;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    border: 1px solid #111111;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: black;
+  }
+  .front{
+    transform: perspective(600px) rotateY(0deg);
+  }
+  .back{
+    transform: perspective(600px) rotateY(180deg);
+  }
+  
+  .front img {
+    width: 80%;
+  }
+  .card:hover > .front{
+    transform: perspective(600px) rotateY(-180deg);
+  }
+  .card:hover > .back{
+    transform: perspective(600px) rotateY(0deg);
+  }
+}

@@ -1,0 +1,20 @@
+.container {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.innercontainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.Scrollel {
+  height: 100%;
+  box-sizing: border-box;
+}

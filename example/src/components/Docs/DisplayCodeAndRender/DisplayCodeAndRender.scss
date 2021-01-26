@@ -1,0 +1,27 @@
+.display__tabs {
+  height: 8%;
+  display: flex;
+  button {
+    font-size: 2rem;
+    width: 80px;
+    border: none;
+    background: #282C34;
+    &.active {
+      background:whitesmoke;
+      color: #282C34;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.display__css-jsx {
+  height: 80%;
+  pre,
+  code,
+  code span {
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+  }
+}

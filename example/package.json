@@ -1,0 +1,40 @@
+{
+  "name": "react-horizontal-scroll-example",
+  "homepage": ".",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
+    "build": "node ../node_modules/react-scripts/bin/react-scripts.js build",
+    "test": "node ../node_modules/react-scripts/bin/react-scripts.js test",
+    "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject"
+  },
+  "dependencies": {
+    "node-sass": "^4.14.1",
+    "react": "file:../node_modules/react",
+    "react-auto-glide": "^1.1.7",
+    "react-dom": "file:../node_modules/react-dom",
+    "react-horizontal-scroll": "file:..",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "file:../node_modules/react-scripts",
+    "react-syntax-highlighter": "^15.4.3"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-object-rest-spread": "^7.8.3",
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
