@@ -37,7 +37,7 @@ const App = () => {
         list={imgs} 
         time="30s"
         width="100px"
-        delay="1000"
+        delayBetweenScroll="1000"
       />
     </div>
   </section>
