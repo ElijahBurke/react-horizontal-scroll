@@ -3,15 +3,11 @@ import React, { useState } from 'react';
 import { ReactScrolling } from 'react-auto-glide';
 import DisplayCodeAndRender from '../DisplayCodeAndRender/DisplayCodeAndRender';
 import '../Width/Width.scss';
+import images from '../../Assetts/skills';
 
-function Time() {
+function Time () {
   const [time, setTime] = useState('10s');
-  const imgs = [
-    'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png',
-    'https://cdn.worldvectorlogo.com/logos/redux.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/1024px-GraphQL_Logo.svg.png',
-    'https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/943/full/ramda.png',
-  ];
+  const imgs = images.slice(4);
 
   const mapper = (source) => <img src={source} alt="" />;
   const jsx = `import { ReactScrolling } from 'react-auto-glide';

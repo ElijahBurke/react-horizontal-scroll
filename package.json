@@ -1,6 +1,6 @@
 {
   "name": "react-auto-glide",
-  "version": "2.0.1",
+  "version": "2.0.3",
   "description": "Customizable component which lets you have your own content glide smoothly accross the screen.",
   "author": "elijah-burke",
   "license": "MIT",
@@ -49,5 +49,16 @@
   },
   "files": [
     "dist"
+  ],
+  "homepage": "https://autoglide.netlify.app/",
+  "keywords": [
+    "glide",
+    "auto",
+    "scroll",
+    "scrollable",
+    "react",
+    "carousel",
+    "slide",
+    "customizable"
   ]
 }

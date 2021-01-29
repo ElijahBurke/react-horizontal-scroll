@@ -3,8 +3,9 @@ import React from 'react';
 import { ReactScrolling } from 'react-auto-glide';
 import DisplayCodeAndRender from '../DisplayCodeAndRender/DisplayCodeAndRender';
 import './Mappers.scss';
+import images from '../../Assetts/skills';
 
-function FlipCard({ img, title }) {
+function FlipCard ({ img, title }) {
   return (
     <div className="card">
       <div className="front">
@@ -18,13 +19,13 @@ function FlipCard({ img, title }) {
 }
 
 const imgs = [
-  { img: 'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png', title: 'React' },
-  { img: 'https://cdn.worldvectorlogo.com/logos/redux.svg', title: 'Redux' },
-  { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/1024px-GraphQL_Logo.svg.png', title: 'GraphQL' },
-  { img: 'https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/943/full/ramda.png', title: 'Ramda' },
+  { img: images[0], title: 'React' },
+  { img: images[1], title: 'Redux' },
+  { img: images[2], title: 'TypeScript' },
+  { img: images[3], title: 'GraphQL' },
 ];
 
-function Mappers() {
+function Mappers () {
   const compJsx = `export default function FlipCard ({ img, title }) {
   return (
     <div className="card">

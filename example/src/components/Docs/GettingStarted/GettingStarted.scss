@@ -1,11 +1,9 @@
 @import '../../../variables.scss';
 .GettingStarted__install {
-  background: $background;
+  background: darken($background, 10%);
+  height: 90vh;
   width: 100%;
   display: flex;
-  @media only screen and (min-height: 800px) {
-    scroll-snap-align: start;
-  }
   .install__inner {
     padding: 1% 2% 0% 2%;
     width: 75%;

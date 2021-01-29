@@ -47,7 +47,7 @@ const App = () => {
 
 ## Props
 
-[See the docs for more information about each prop and examples of how it effects the container](https://react-auto-glide.netlify.app)
+[See the docs for more information about each prop and examples of how it effects the container](https://autoglide.netlify.app/)
 
 | Prop | Description | Required | Default |
 | ---- | ----------- | -------- | ------- |

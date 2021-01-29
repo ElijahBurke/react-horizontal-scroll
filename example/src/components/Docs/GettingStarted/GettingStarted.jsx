@@ -4,8 +4,9 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import * as styles from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { ReactScrolling } from 'react-auto-glide';
 import 'react-auto-glide/dist/index.css';
+import images from '../../Assetts/skills';
 
-function GettingStarted() {
+function GettingStarted () {
   const install = `# install the latest version
 $ npm i react-auto-slide`;
 
@@ -19,12 +20,7 @@ const mapper = (source) => <img src={source} alt="" />;`;
   <ReactScrolling mapper={mapper} list={imgs} />
 </div>`;
 
-  const imgs = [
-    'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png',
-    'https://cdn.worldvectorlogo.com/logos/redux.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/1024px-GraphQL_Logo.svg.png',
-    'https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/943/full/ramda.png',
-  ];
+  const imgs = images.slice(4);
 
   const mapper = (source) => <img src={source} alt="" />;
 
@@ -71,8 +67,8 @@ const mapper = (source) => <img src={source} alt="" />;`;
         <div className="install__pre-reqs">
           And That
           {'\''}
-          s it! Below is what this would render. See further down for this example put
-          into one block!
+          s it! Below is what this would render. See the quick start page
+          for all this code in one block.
         </div>
         <div className="glide-container">
           <ReactScrolling mapper={mapper} list={imgs} />

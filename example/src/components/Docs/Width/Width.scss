@@ -2,7 +2,7 @@
 .Width__width {
   width: 100%;
   min-height: 90vh;
-  background: $background;
+  background: darken($background, 10%);
   .width__container {
     width: 75%;
     padding: 1% 1.5%;

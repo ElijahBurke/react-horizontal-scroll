@@ -9,17 +9,12 @@ import Width from './Width/Width';
 import Time from './Time/Time';
 import Delay from './Delay/Delay';
 
-function Docs({ name }) {
+function Docs ({ name }) {
   return (
     <div>
       <DocsSideNav name={name} />
-      {name === 'getting-started'
-      && (
-        <>
-          <GettingStarted />
-          <BasicSetup />
-        </>
-      )}
+      {name === 'getting-started' && <GettingStarted />}
+      {name === 'quick-start' && <BasicSetup />}
       {name === 'mappers' && <Mappers />}
       {name === 'width' && <Width />}
       {name === 'time' && <Time />}
